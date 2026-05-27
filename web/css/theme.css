@@ -14,7 +14,7 @@
   --kw-border: var(--kw-neutral-300);
   --kw-link: var(--kw-secondary);
   --kw-card: #ffffff;
-  --kw-muted-text: color-mix(in srgb, var(--kw-surface) 70%, white);
+  --kw-muted-text: color-mix(in srgb, var(--kw-surface) 85%, white);
   /* Dark grey for emphasis lines (e.g. hero “in seconds”) — softer than surface */
   --kw-text-dark-grey: color-mix(in srgb, var(--kw-surface) 62%, var(--kw-neutral-500));
   --kw-focus-ring: color-mix(in srgb, var(--kw-primary) 28%, transparent);

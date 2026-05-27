@@ -2,7 +2,16 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>KnowWhere Search Playground</title>
+  <title>KnowWhere | AI-Powered Academic Search Playground</title>
+  <meta name="description" content="Explore the KnowWhere Search Playground to compare lexical and hybrid search results for academic papers.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "KnowWhere Search Playground",
+    "description": "An interactive environment to test and compare academic search results."
+  }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Favicon is injected via components/favicon.html -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css">
@@ -44,6 +53,7 @@
 </script>
 
 <div class="overflow-hidden content-section" id="content-playground">
+    <h1 class="sr-only">KnowWhere Search Playground</h1>
   <div class="search-empty-hero">
     <a href="./index.html" aria-label="KnowWhere home" title="KnowWhere">
       <img class="search-empty-hero__logo" src="images/logo.png" alt="KnowWhere">
@@ -55,7 +65,8 @@
         <a href="./index.html" aria-label="KnowWhere home" title="KnowWhere">
           <img class="search-top-logo" src="images/logo.png" alt="KnowWhere">
         </a>
-        <input id="query" type="text" class="search-input" placeholder="Search for papers..." value="graph neural networks">
+            <label for="query" class="sr-only">Search for papers</label>
+    <input id="query" type="text" class="search-input" placeholder="Search for papers..." value="graph neural networks">
         <div class="search-actions">
           <button id="search-btn" class="btn btn-primary">Search</button>
         </div>
@@ -66,7 +77,7 @@
 
 <div class="overflow-hidden content-section results-columns">
   <section class="results-column results-column--lex" aria-label="Lexical results">
-    <div class="results-column__title">Standard Search</div>
+    <h2 class="results-column__title">Standard Search</h2>
     <div class="results-header">
       <div id="pagination-top-lex" class="pagination-top"></div>
     </div>
@@ -76,7 +87,7 @@
   </section>
 
   <section class="results-column" aria-label="Hybrid results">
-    <div class="results-column__title">KnowWhere Search</div>
+    <h2 class="results-column__title">KnowWhere Search</h2>
     <div class="results-header">
       <div id="pagination-top-hybrid" class="pagination-top"></div>
     </div>
