@@ -1,0 +1,30 @@
+{
+  "lexical": {
+    "mean_precision@5": 0.0010666666666666667,
+    "mean_recall@5": 0.0010277777777777776,
+    "mean_precision@10": 0.0008777777777777778,
+    "mean_recall@10": 0.0010277777777777776,
+    "mean_precision@20": 0.0008277777777777778,
+    "mean_recall@20": 0.0010277777777777776,
+    "mean_precision@50": 0.0008194444444444445,
+    "mean_recall@50": 0.0010277777777777776,
+    "mean_mrr": 0.0028333333333333335,
+    "total_queries": 1000,
+    "mean_latency_ms": 85.06430369755253
+  },
+  "hybrid": {
+    "mean_precision@5": 0.139,
+    "mean_recall@5": 0.4289,
+    "mean_precision@10": 0.0945,
+    "mean_recall@10": 0.5569,
+    "mean_precision@20": 0.06570000000000001,
+    "mean_recall@20": 0.7508,
+    "mean_precision@50": 0.03455524412478983,
+    "mean_recall@50": 0.9039,
+    "mean_mrr": 0.361873716097544,
+    "total_queries": 1000,
+    "mean_latency_ms": 1315.6838194020092
+  },
+  "sample_size": 1000,
+  "seed": 42
+}

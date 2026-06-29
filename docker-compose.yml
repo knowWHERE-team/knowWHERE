@@ -129,6 +129,9 @@ services:
       context: .
       dockerfile: Dockerfile.web
     container_name: knowwhere-web
+    environment:
+      # Injected into proxied /api requests so browsers never need the key.
+      WEB_PROXY_API_KEY: ${API_KEY:-}
     ports:
       - "8080:80"
     volumes:

@@ -265,7 +265,7 @@ function buildPaperQuery(
     values.push(limit);
     const sql = `
       WITH q AS (
-        SELECT plainto_tsquery('english', $1) AS q_ts
+        SELECT websearch_to_tsquery('english', $1) AS q_ts
       )
       SELECT p.id,
              p.title,
@@ -328,7 +328,7 @@ function buildPaperQuery(
   const sql = `
     WITH q AS (
       SELECT
-        plainto_tsquery('english', $1) AS q_ts,
+        websearch_to_tsquery('english', $1) AS q_ts,
         ${vectorRef}::vector AS q_vec
     ),
     lex AS (
@@ -390,7 +390,7 @@ function buildChunkQuery(
     values.push(limit);
     const sql = `
       WITH q AS (
-        SELECT plainto_tsquery('english', $1) AS q_ts
+        SELECT websearch_to_tsquery('english', $1) AS q_ts
       )
       SELECT p.id,
              p.title,
@@ -398,7 +398,7 @@ function buildChunkQuery(
              p.doi,
              p.url,
              p.subjects,
-             p.source,
+             s.name AS source,
              c.chunk_id,
              LEFT(c.chunk_text, ${SNIPPET_LENGTH}) AS snippet,
              ts_rank_cd(c.tsv, q.q_ts) AS lex_score,
@@ -457,7 +457,7 @@ function buildChunkQuery(
   const sql = `
     WITH q AS (
       SELECT
-        plainto_tsquery('english', $1) AS q_ts,
+        websearch_to_tsquery('english', $1) AS q_ts,
         ${vectorRef}::vector AS q_vec
     ),
     lex AS (

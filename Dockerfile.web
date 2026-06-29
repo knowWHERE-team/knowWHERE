@@ -1,12 +1,18 @@
 FROM nginx:1.27-alpine
 
+RUN apk add --no-cache gettext
+
 WORKDIR /usr/share/nginx/html
 
 # Reverse-proxy /api/* to the Fastify backend (so one ngrok tunnel for web is enough).
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/default.conf.template /etc/nginx/templates/default.conf.template
+COPY nginx/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Serve the static site at both / and /web
 COPY web /usr/share/nginx/html
 COPY web /usr/share/nginx/html/web
 
 EXPOSE 80
+
+ENTRYPOINT ["/entrypoint.sh"]
